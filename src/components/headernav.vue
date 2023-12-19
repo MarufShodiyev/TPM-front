@@ -14,7 +14,7 @@
                     </ul>
                 </nav>
                 <div class="language_contact">
-                    <!-- <div class="language">
+                    <div class="language">
                         <img src="../assets/images/language_img.svg" alt="language_img">
                         <select name="language" id="language">
                             <option value="Eng">English</option>
@@ -25,7 +25,7 @@
                     <div class="contact">
                         <img src="../assets/images/contact.svg" alt="">
                         <a href="tel:+998943330799">+998943330799</a>
-                    </div> -->
+                    </div>
                     <button id="menu" @click="toggleMenu">
                         <i class="fa-solid fa-bars"></i>
                     </button>
