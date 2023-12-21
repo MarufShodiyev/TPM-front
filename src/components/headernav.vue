@@ -5,10 +5,7 @@
                 <div class="logo">
                     <img src="../assets/images/logo.svg" alt="logo img">
                 </div>
-                <nav class="nav" v-bind:class="{ active: menuOpen }">
-                    <button id="close" @click="toggleMenu">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+                <nav>
                     <ul class="navs">
                         <li v-for="(item, index) in navs" :key="index"><a :href="item.path">{{ item.text }}</a></li>
                     </ul>
@@ -26,29 +23,33 @@
                         <img src="../assets/images/contact.svg" alt="">
                         <a href="tel:+998943330799">+998943330799</a>
                     </div>
-                    <button id="menu" @click="toggleMenu">
+                    <button id="menu" @click="Menu" v-if="open">
                         <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <button id="menu" @click="Menu" v-if="!open">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
 
                 </div>
             </div>
         </div>
     </header>
+    <MenuHeader v-if="!open" :class="{ 'active': !open }" />
 </template>
 
 
 
 <script setup>
+import MenuHeader from './menu.vue'
+import { reactive, ref } from 'vue';
 
-import { reactive } from 'vue';
+let open = ref(true)
 
-let menuOpen = false;
-
-  const toggleMenu = () => {
+const Menu = () => {
     console.log("click me");
-    menuOpen = !menuOpen;
-    
-  };
+    open.value = !open.value;
+
+};
 
 const navs = reactive([
     {
@@ -78,7 +79,7 @@ header .header-wrapper {
     height: 120px;
 }
 
-.header-wrapper::before {
+/* .header-wrapper::before {
     position: absolute;
     content: '';
     width: 800px;
@@ -88,9 +89,8 @@ header .header-wrapper {
     background: rgba(226, 41, 0, 0.07);
     filter: blur(100px);
     left: -30%;
-    /* bottom:-200%; */
-
-}
+    
+} */
 
 ul {
     display: flex;
@@ -103,6 +103,12 @@ ul li a {
     font-size: 16px;
     font-weight: 400;
     padding: 10px 32px;
+}
+ul li a:hover{
+    background-color: #6265F0;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.5s, color 0.7s;
 }
 
 .language_contact {
@@ -155,8 +161,15 @@ ul li a {
     align-items: center;
     justify-content: center;
 } */
-button i {
+button{
     display: none;
+    border:none;
+    background: none;
+    width: 35px;
+    height: 35px;
+    
+}
+button i {
     font-size: 30px;
     color: #aeafec;
 }
@@ -165,7 +178,6 @@ button i {
     ul li a {
         padding: 8px 22px;
     }
-
 }
 
 @media screen and (max-width:1160px) {
@@ -188,8 +200,15 @@ button i {
     }
 }
 
+/* menu qismi responsive */
+
+.active {
+    position: absolute;
+
+}
+
 @media screen and (max-width:992px) {
-    .nav {
+    nav {
         display: none;
     }
 
@@ -202,21 +221,12 @@ button i {
         padding: 8px 16px;
     }
 
-    button {
-        border: none;
-        background: none;
+
+
+    button{
+        display: inline-block;
     }
 
-    button i {
-        display: block;
-    }
-
-    /* .nav{
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    } */
+    
 }
 </style>

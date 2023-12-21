@@ -32,6 +32,7 @@
 <script setup>
 import Title from './ui/title.vue';
 import Button from './ui/button.vue'
+import watchVideo from '../assets/images/video-watch.mp4'
 </script>
 <style scoped>
 #header_section {
