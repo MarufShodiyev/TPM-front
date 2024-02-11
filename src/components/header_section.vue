@@ -35,36 +35,32 @@ import Button from './ui/button.vue'
 import watchVideo from '../assets/images/video-watch.mp4'
 </script>
 <style scoped>
-#header_section {
+/* #header_section {
     position: relative;
 
-}
-
-.section__wrapper::before {
+} */
+/* #header_section ::before{
     position: absolute;
-    border-radius: 906px;
-    background: rgba(0, 50, 226, 0.10);
-    filter: blur(100px);
-    top: 50%;
-    right: -50px;
-    content: '';
-    width: 100%;
-    height: 100%;
-    width: 600px;
-    height: 600px;
+    content:'';
+    width: 800px;
+    height: 800px;
     flex-shrink: 0;
+    border-radius: 500px;
+    background: rgba(249, 50, 5, 0.07);
+    filter: blur(100px);
     z-index: -1;
-   
-}
+    left: -30%;
+    top: -50%;
+} */
+
+
 
 .section__wrapper {
-    position: relative;
     display: flex;
     align-items: start;
     justify-content: space-between;
     padding-top: 42px;
     gap: 30px;
-    background-position: right;
 }
 
 div .page_title {
@@ -112,10 +108,14 @@ div p {
 
 }
 
-@media screen and (max-width:990px) {
+@media screen and (max-width:992px) {
     .section__wrapper {
         flex-direction: column;
        
+    }
+    
+    div p{
+        width: 100%;
     }
     .header_section-info,.section_img{
         display: flex;
@@ -130,14 +130,7 @@ div p {
         text-align: center;
         margin: 0px auto;
     }
-    .section__wrapper{
-        top: 35%;
-        right: 0px;
-    }
-    .section__wrapper::before{
-        top: 30%;
-        right: 23px;
-    }
+    
     
 }
 
@@ -149,6 +142,31 @@ div p {
     .section_img img{
         max-width: 600px;
         max-height: 500px;
+    }
+}
+@media screen and (max-width:520px) {
+    #btn_watch-vidio{
+        gap: 25px;
+    }
+    .watch-vidio a{
+        gap: 15px;
+    }
+    .section_img img{
+        width: 420px;
+        height: 370px;
+        width: 100%;
+    }
+}
+@media screen and (max-width:420px){
+    div .page_title{
+        font-size: 35px;
+        padding: 10px 0px;
+    }
+    div p{
+        padding: 25px 0px;
+    }
+    #btn_watch-vidio{
+        flex-direction: column;
     }
 }
 </style>

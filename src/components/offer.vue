@@ -8,14 +8,13 @@ Nec dignissim massa elementum eu venenatis lorem. Viverra integer nibh tellus mo
                 <form>
                     <input type="text" placeholder="name" id="name">
                     <input type="text" placeholder="Last name" id="last_name">
-                    <input type="tel" placeholder="Phone number" id="number">
+                    <input type="tel"   @input="enforcePhoneFormat()" placeholder="Phone number" id="tel_number">
                     <input type="email" placeholder="Email" id="email">
                     <textarea name="messege" id="message" cols="30" rows="7" placeholder="Message"></textarea>
                 </form>
                 <Button class="offer_btn" label="Send message" />
             </div>
         </div>
-
     </div>
 </template>
 <script setup>
@@ -25,7 +24,7 @@ import Button from './ui/button.vue'
 </script>
 <style scoped>
 #contact {
-    background-image: url(../assets/images/offerback.png);
+    /* background-image: url(../assets/images/offerback.png); */
     background-repeat: no-repeat;
     /* background-position: top; */
     background-position: center;
@@ -95,4 +94,16 @@ form input:focus-visible {
     align-items: center;
     justify-content: center;
     margin: 32px auto 0px;
-}</style>
+}
+@media screen and (max-width:910px){
+    form input{
+        max-width: 500px;
+        width: 100%;
+    }
+    #message {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
+</style>

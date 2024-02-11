@@ -104,4 +104,19 @@ import PageInfo from './ui/pageInfo.vue'
         padding-bottom: 55px;
     }
     }
+    @media screen and (max-width:768px){
+        .message_img img{
+            max-width: 600px;
+            height: 500px;
+        }
+    }
+    @media screen and (max-width:520px){
+        .message_img img{
+            width: 420px;
+            height: 300px;
+        }
+        .networks{
+            flex-wrap: wrap;
+        }
+    }
 </style>

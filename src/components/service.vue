@@ -91,28 +91,29 @@ const ser = reactive([
 
 <style  scoped>
 #services {
+    /* position: relative; */
     background: linear-gradient(180deg, #FFF 0%, #F6F9FF 100%);
     /* z-index: 1; */
 }
 
 .service_wrapper {
     margin-top: 100px;
-    position: relative;
+   
 }
-
-.service_wrapper::before {
+/* 
+#services::before {
     content: '';
     position: absolute;
     width: 600px;
     height: 600px;
     flex-shrink: 0;
     border-radius: 500px;
-    background: rgba(226, 41, 0, 0.07);
-    filter: blur(100px);
+   
+    background: rgba(226, 41, 0, 0.03);
+    filter: blur(10px);
     left: -20%;
     top: -10%;
-    /* z-index: -1; */
-}
+} */
 
 .center {
     text-align: center;
@@ -141,9 +142,6 @@ ul li {
     margin-bottom: 50px;
 }
 
-/* ul li {
-    margin-left: 2px
-} */
 
 ul li div {
     border-radius: 10px;

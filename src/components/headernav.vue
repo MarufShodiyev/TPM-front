@@ -71,8 +71,10 @@ const navs = reactive([
 </script>
 
 <style scoped>
+header{
+    background: white;
+}
 header .header-wrapper {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -227,6 +229,14 @@ button i {
         display: inline-block;
     }
 
+    
+}
+@media screen and (max-width:760px){
+    .contact,.language{
+        display: none;
+    }
+}
+@media screen and (max-width:760px){
     
 }
 </style>

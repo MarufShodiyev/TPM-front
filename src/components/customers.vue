@@ -6,7 +6,7 @@
                 <PageInfo class="center"
                     title="Lorem ipsum dolor sit amet consectetur. Metus eget risus viverra malesuada faucibus nulla at viverra. Eget ac elementum vel nunc non tempor. Nec dignissim massa elementum eu venenatis lorem. Viverra integer nibh tellus morbi sed." />
 
-                <swiper :modules="modules" :slides-per-view="3" :space-between="32" navigation 
+                <swiper :modules="modules" :slides-per-view="3" :space-between="32" navigation
                     :pagination="{ clickable: true }" @swiper="onSwiper" @slideChange="onSlideChange">
                     <swiper-slide v-for="(item, index) in customer" :key="index">
                         <ul>
@@ -38,19 +38,12 @@
 
 <script setup>
 import Title from './ui/title.vue'
-import PageInfo from './ui/pageinfo.vue'
+import PageInfo from './ui/pageInfo.vue'
 import { reactive, ref } from 'vue';
 import img from "@/assets/images/customer.png"
 import commaimg from '@/assets/icons/comma_icon.svg'
-
-
-// import Swiper core and required modules
 import { Pagination } from 'swiper/modules';
-
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -59,31 +52,31 @@ const customer = reactive([
         title: "Customer support deserves special mention. The TPM team is not only responsive but also proactive in addressing any concerns. Their commitment to resolving issues promptly reflects a level of professionalism that is truly commendable.",
         image: img,
         name: "Xurshid Istamov",
-        comma:commaimg
+        comma: commaimg
     },
     {
         title: "Customer support deserves special mention. The TPM team is not only responsive but also proactive in addressing any concerns. Their commitment to resolving issues promptly reflects a level of professionalism that is truly commendable.",
         image: img,
         name: "Xurshid Istamov",
-        comma:commaimg
+        comma: commaimg
     },
     {
         title: "Customer support deserves special mention. The TPM team is not only responsive but also proactive in addressing any concerns. Their commitment to resolving issues promptly reflects a level of professionalism that is truly commendable.",
         image: img,
         name: "Xurshid Istamov",
-        comma:commaimg
+        comma: commaimg
     },
     {
         title: "Customer support deserves special mention. The TPM team is not only responsive but also proactive in addressing any concerns. Their commitment to resolving issues promptly reflects a level of professionalism that is truly commendable.",
         image: img,
         name: "Xurshid Istamov",
-        comma:commaimg
+        comma: commaimg
     },
     {
         title: "Customer support deserves special mention. The TPM team is not only responsive but also proactive in addressing any concerns. Their commitment to resolving issues promptly reflects a level of professionalism that is truly commendable.",
         image: img,
         name: "Xurshid Istamov",
-        comma:commaimg
+        comma: commaimg
     },
 
 
@@ -118,9 +111,10 @@ const modules = ref([Pagination])
 
 
 <style scoped>
-.swiper-pagination{
+.swiper-pagination {
     padding: 50px 0px;
 }
+
 .customer {
     background: linear-gradient(180deg, #FFF 0%, #F6F9FF 100%);
 }
@@ -135,10 +129,10 @@ const modules = ref([Pagination])
 }
 
 ul {
-    margin-top: 68px;
+    padding-top: 68px;
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding-bottom: 100px;
 }
 
@@ -159,11 +153,13 @@ ul li p {
     font-weight: 500;
     line-height: 32px;
 }
-.customer__comma{
+
+.customer__comma {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .customer_img {
     margin-top: 20px;
     display: flex;
@@ -176,4 +172,5 @@ ul li p {
     border: 2px solid var(--additional-colors-indigo-500, #6265F0);
     background: var(--avatars-square-image-13-john-moccy, url(<path-to-image>), lightgray 50% / cover no-repeat, #D4D3D3);
 }
+
 </style>

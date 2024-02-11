@@ -6,7 +6,7 @@
                     <img src="../assets/icons/about_img.svg" alt="about_img.svg">
                 </div>
                 <div class="about_title">
-                    <Title title="About Us" />
+                    <Title class="title" title="About Us" />
                     <PageInfo class="page_info"
                         title="At Town Property Management, we believe in more than just managing properties; we're dedicated to enhancing the entire property ownership experience. With a passion for real estate and a commitment to excellence, we've become the go-to partner for property owners seeking unparalleled service in TPM." />
                     <h3>Our Mission:</h3>
@@ -25,7 +25,28 @@ import Title from './ui/title.vue'
 import PageInfo from './ui/pageInfo.vue'
 import Button from './ui/button.vue'
 </script>
+
 <style scoped>
+#about {
+    position: relative;
+}
+
+/* #about::before {
+    position: absolute;
+    content: "";
+    top: -100%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    flex-shrink: 0;
+    border-radius: 500px;
+
+    z-index: 200;
+    background: rgba(0, 50, 226, 0.10);
+    filter: blur(100px);
+    
+} */
+
 .about_wrapper {
     margin-top: 113px;
     display: flex;
@@ -48,25 +69,52 @@ import Button from './ui/button.vue'
 .btn {
     margin-top: 32px;
 }
-.about_img img{
+
+.about_img img {
     max-width: 700px;
     max-height: 500px;
 }
+
 @media screen and (max-width:990px) {
-    .about_wrapper{
+    .about_wrapper {
         flex-direction: column-reverse;
         text-align: center;
         margin: 0px auto;
     }
-    .about_title{
+
+    .about_title {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    .about_img{
+
+    .about_img {
         text-align: center;
         margin: 0px auto;
     }
-}
-</style>
+    @media screen and (max-width:768px){
+        .about_img img{
+            width: 600px;
+            height: 500px;
+        }
+    }
+    @media screen and (max-width:520px){
+        .about_img img{
+            width: 420px;
+            height: 300px;
+        }
+    }
+    @media screen and (max-width:420px){
+        .title{
+            font-size: 35px;
+        }
+        .page_info{
+            font-size: 20px;
+        }
+        .about_img img{
+            width: 341px;
+            height: 241px;
+        }
+    }
+}</style>

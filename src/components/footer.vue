@@ -110,4 +110,7 @@ footer {
     align-items: center;
     gap: 20px;
 }
+@media screen and (max-width:992px){
+    
+}
 </style>

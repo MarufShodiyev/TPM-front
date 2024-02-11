@@ -23,4 +23,4 @@ const { title } = page_title
     max-width: 812px;
 }
 </style>
-
+  
